@@ -1,0 +1,2065 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+:root {
+  --dark-black: #212121;
+  --light-black: #3e3e3e;
+  --dark-white: #c9c9c9;
+  --light-white: #f3f3f3;
+  --dark-red: #840000;
+  --light-red: #b30000;
+  --white: #fff;
+  --black: #000;
+  --purple: #7d0096;
+  --dark-purple: #5e0071;
+  --light-blue: #ebf4fa;
+  --blue: #1f47fd;
+  --dark-blue: #0020b1;
+  --yellow: #d4ca11;
+  --orange: #a74e00;
+  --light-purple: #e9d1ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-size: 1em;
+}
+
+p.msgPembeli {
+  color: var(--purple);
+  text-align: center;
+  margin-top: 0.5em;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+p.msgKetersediaan {
+  color: var(--light-black);
+  margin-top: 2em;
+  font-size: 1.2em;
+  text-align: center;
+  width: 100%;
+}
+
+.navbar .firstSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+  background-color: var(--dark-black);
+  padding: 0 5em;
+  position: relative;
+  z-index: 20;
+}
+
+.navbar .firstSide .search {
+  width: 20em;
+  background-color: var(--white);
+  height: 50%;
+  position: relative;
+}
+
+.navbar .firstSide .search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-left: 0.5em;
+}
+
+.navbar .firstSide .search input:focus {
+  outline: 3px solid var(--purple);
+}
+
+.navbar .firstSide .search button {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 100%;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--light-black);
+}
+
+.navbar .firstSide .searchMobile {
+  display: none;
+  color: var(--white);
+  font-size: 1.5em;
+}
+
+.navbar .firstSide .logo h4 {
+  color: var(--white);
+  font-size: 1.6em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar .firstSide .logo h4 span {
+  background: -webkit-linear-gradient(230deg, #b100f1, #ea0707);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.navbar .firstSide .menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 8em;
+}
+
+.navbar .firstSide .menu .icon {
+  color: var(--white);
+  font-size: 1.3em;
+}
+
+.navbar .firstSide .menu .icon:hover {
+  color: var(--yellow);
+}
+
+.navbar .secondSide nav.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  opacity: 0.7;
+}
+
+.navbar .secondSide nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  background: -webkit-linear-gradient(45deg, var(--purple), var(--light-red));
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar .secondSide nav li {
+  list-style: none;
+  margin: 0 1em;
+}
+
+.navbar .secondSide nav li a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.navbar .secondSide nav li a:hover {
+  color: var(--yellow);
+}
+
+.navbar .firstSide .menu a.aktif .icon,
+.navbar .secondSide nav li a.aktif,
+.navbar .thirdSide .menu a.aktif .icon {
+  color: var(--yellow);
+}
+
+.navbar .iconBar {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar .thirdSide {
+  display: none;
+}
+
+.navbar .thirdSide .menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+
+.navbar .thirdSide .menu .icon {
+  color: var(--light-black);
+  font-size: 1.4em;
+}
+
+.navbar .thirdSide .menu .icon:hover {
+  color: var(--yellow);
+  font-size: 1.4em;
+}
+
+/* Home */
+
+.home,
+.detailProduk,
+.keranjang,
+.pesanan,
+.loginPembeli,
+.registerPembeli,
+.profile,
+.produkPembeli,
+.reviewPembeli,
+.riwayatPesanan {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80em;
+  width: 100%;
+}
+
+.heroHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34em;
+  background-color: var(--light-purple);
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroHome .firstSide,
+.heroHome .secondSide {
+  width: 50%;
+}
+
+.heroHome .firstSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.heroHome .firstSide .konten {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.heroHome .firstSide h3 {
+  color: var(--light-black);
+}
+
+.heroHome .firstSide h1 {
+  font-size: 3em;
+  font-weight: bolder;
+  width: 100%;
+  color: var(--dark-black);
+  text-shadow: 5px 0 5px var(--purple);
+  letter-spacing: 0.1em;
+}
+
+.heroHome .firstSide button {
+  width: 9em;
+  height: 2.8em;
+  background-color: var(--dark-black);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.heroHome .firstSide button:hover {
+  background-color: var(--white);
+  border: 3px solid var(--dark-black);
+  color: var(--dark-black);
+}
+
+.heroHome .secondSide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  background: -webkit-linear-gradient(360deg, var(--light-purple), var(--white));
+}
+
+.productHome {
+  padding-top: 3em;
+  background-color: var(--white);
+}
+
+.productHomeKonten {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.productHome h2,
+.newProductHome h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--light-black);
+}
+
+.productHome h2 span,
+.newProductHome h2 span {
+  background: -webkit-linear-gradient(45deg, var(--light-red), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.productHome p:nth-child(2),
+.newProductHome p:nth-child(2),
+.message .pesanKonten p:nth-child(2) {
+  text-align: center;
+  margin-bottom: 2em;
+  color: var(--light-black);
+  font-size: 0.9em;
+}
+
+.productHome .card {
+  width: 95%;
+  max-width: 18em;
+  height: 25em;
+  background-color: var(--white);
+  overflow: hidden;
+  box-shadow: 0 0 2em #c6c6c6;
+}
+
+.productHome .card .cardGambar {
+  width: 100%;
+  max-width: 18em;
+  height: 18em;
+  position: relative;
+  background-color: var(--light-blue);
+}
+
+.productHome .card .cardGambar img {
+  width: 100%;
+  height: 100%;
+}
+
+.productHome .card .cardGambar .cardIcon {
+  position: absolute;
+  right: 2%;
+  top: -12%;
+  width: 35%;
+  height: 2em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+}
+
+.productHome .card .cardGambar .cardIcon.aktif {
+  top: 2%;
+}
+
+.productHome .card .cardGambar .cardIcon .icon {
+  color: var(--dark-purple);
+  background-color: var(--white);
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.productHome .card .cardGambar .cardIcon .icon:hover {
+  background-color: var(--dark-black);
+  color: var(--white);
+}
+
+.productHome .card .keterangan {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.productHome .card .keterangan .namaProduct {
+  font-size: 1.3em;
+  color: var(--light-black);
+  text-decoration: none;
+}
+
+.productHome .card .keterangan .namaProduct:hover {
+  color: var(--orange);
+}
+
+.productHome .card .keterangan p {
+  font-size: 0.8em;
+  color: var(--light-black);
+}
+
+.productHome .card .keterangan p.harga {
+  font-size: 1.1em;
+  color: var(--light-red);
+  font-weight: bold;
+}
+
+.newProductHome {
+  padding: 2em 0;
+  background-color: var(--white);
+}
+
+.newProductHome .newProductHomeKonten {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.7em;
+  padding: 0 1em;
+}
+
+.newProductHome .newProductHomeKonten .card {
+  max-width: 15em;
+  width: 96%;
+  min-height: 22em;
+  background-color: var(--white);
+  padding: 1em;
+  border: 1px solid var(--purple);
+  border-radius: 1em;
+  box-shadow: 0 0 2em #c6c6c6;
+}
+
+.newProductHome .newProductHomeKonten .card .cardGambar {
+  width: 100%;
+  max-width: 13em;
+  height: 13em;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 1em;
+  position: relative;
+  background-color: var(--light-blue);
+}
+
+.newProductHome .newProductHomeKonten .card .cardGambar img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.newProductHome .newProductHomeKonten .card .cardGambar .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.newProductHome .newProductHomeKonten .card .cardGambar .overlay p {
+  color: var(--white);
+}
+
+.newProductHome .newProductHomeKonten .card .cardGambar.aktif img {
+  transform: scale(1.2);
+}
+
+.newProductHome .newProductHomeKonten .card .cardGambar.aktif .overlay {
+  display: flex;
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide .keterangan {
+  width: 90%;
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide .keterangan p {
+  color: var(--light-black);
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide .keterangan .namaProduct {
+  color: var(--light-black);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide .keterangan .namaProduct:hover {
+  color: var(--purple);
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide .keterangan .harga {
+  color: var(--purple);
+  font-size: 1.1em;
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide .icon {
+  padding: 0.5em;
+  background-color: var(--light-purple);
+  margin-top: 2em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  color: var(--dark-black);
+}
+
+.newProductHome .newProductHomeKonten .card .bottomSide .icon:hover {
+  background-color: var(--dark-black);
+  color: var(--white);
+}
+
+.message {
+  background: -webkit-linear-gradient(90deg, var(--light-purple), var(--white));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0 2em;
+}
+
+.message .pesanKonten {
+  width: 90%;
+  max-width: 40em;
+  padding: 1em;
+}
+
+.message .pesanKonten h2 {
+  font-size: 2em;
+  text-align: center;
+  background: -webkit-linear-gradient(45deg, var(--light-red), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.message .pesanKonten .box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+  border: 2px dashed var(--purple);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.message .pesanKonten .box .gambar {
+  width: 50%;
+  height: 24em;
+}
+
+.message .pesanKonten .box .gambar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message .pesanKonten .box form {
+  width: 50%;
+  padding-left: 1em;
+}
+
+.message .pesanKonten .box form label {
+  color: var(--purple);
+  font-size: 1.2em;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.message .pesanKonten .box form textarea {
+  width: 100%;
+  resize: none;
+  height: 10em;
+  border: 1px solid var(--dark-white);
+  border-radius: 1em;
+  margin-top: 0.5em;
+  padding: 1em;
+  color: var(--light-black);
+}
+.message .pesanKonten .box form textarea:focus {
+  outline: 2px solid var(--purple);
+}
+
+.message .pesanKonten .box form button {
+  width: 100%;
+  height: 2.7em;
+  margin-top: 1em;
+  border-radius: 0.5em;
+  background-color: var(--purple);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.message .pesanKonten .box form button:hover {
+  background-color: var(--dark-purple);
+  color: var(--white);
+}
+
+/* Produk */
+.produkPembeliKonten {
+  background-color: var(--white);
+  padding: 2em;
+}
+
+.produkPembeliKonten .judulProduk {
+  width: 100%;
+  height: 15em;
+  position: relative;
+}
+
+.produkPembeliKonten .judulProduk img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.produkPembeliKonten .judulProduk .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produkPembeliKonten .judulProduk .overlay h1 {
+  color: var(--white);
+  font-size: 3em;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.produkPembeliKonten .subjudul {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.produkPembeliKonten .subjudul h2 {
+  color: var(--light-black);
+  font-size: 1.2em;
+}
+
+.produkPembeliKonten .subjudul .icon {
+  margin-right: 0.5em;
+}
+
+.produkPembeliKonten .subjudul select {
+  width: 15em;
+  border: 1px solid var(--light-black);
+  padding: 0.3em 0.5em;
+  border-radius: 0.7em;
+  margin: 0.5em 0;
+  background-color: var(--light-blue);
+  font-size: 1em;
+}
+
+.produkPembeliKonten .subjudul option {
+  width: 15em;
+}
+
+.produkPembeliKonten .daftarProduk {
+  margin: 1em auto 3em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.produkPembeliKonten .daftarProduk .box {
+  min-width: 16em;
+  padding: 1em;
+  box-shadow: 0 0 1em #cfcfcf;
+}
+
+.produkPembeliKonten .daftarProduk .box .gambar {
+  width: 100%;
+  height: 16em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--light-blue);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.produkPembeliKonten .daftarProduk .box .gambar img {
+  max-width: 15em;
+  transition: all 0.3s ease-in-out;
+}
+
+.produkPembeliKonten .daftarProduk .box .gambar.aktif img {
+  transform: scale(1.3);
+}
+
+.produkPembeliKonten .daftarProduk .box .gambar.aktif .overlay {
+  display: flex;
+}
+
+.produkPembeliKonten .daftarProduk .box .gambar .overlay {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  text-decoration: none;
+}
+
+.produkPembeliKonten .daftarProduk .box .gambar .overlay .lihat {
+  color: var(--dark-white);
+  font-weight: bold;
+}
+
+.produkPembeliKonten .daftarProduk .keterangan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .detail .h2 {
+  text-decoration: none;
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .detail h2 {
+  color: var(--dark-black);
+  font-size: 1.1em;
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .detail h2:hover {
+  color: var(--purple);
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .detail .merek {
+  font-size: 0.9em;
+  color: var(--light-black);
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .detail .harga {
+  color: var(--purple);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .cardIcon {
+  width: 20%;
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .cardIcon .icon {
+  padding: 0.5em;
+  background-color: var(--light-blue);
+  color: var(--purple);
+  cursor: pointer;
+  border-radius: 0.4em;
+  font-size: 1.2em;
+}
+
+.produkPembeliKonten .daftarProduk .keterangan .cardIcon .icon:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+/* Detail Produk */
+
+.detailProduk {
+  background-color: var(--white);
+}
+
+.detailProdukKonten {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.detailProdukKonten .boxDetail {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70em;
+}
+
+.detailProdukKonten .boxDetail .gambar {
+  width: 50%;
+  background-color: var(--light-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+.detailProdukKonten .boxDetail .gambar img {
+  width: 100%;
+}
+
+.detailProdukKonten .boxDetail .detail {
+  width: 50%;
+  padding: 2em;
+}
+
+.detailProdukKonten .boxDetail .detail h2 {
+  font-size: 2.5em;
+  color: var(--dark-black);
+}
+
+.detailProdukKonten .boxDetail .detail .merek {
+  color: var(--light-black);
+}
+
+.detailProdukKonten .boxDetail .detail .harga {
+  color: var(--dark-purple);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.detailProdukKonten .boxDetail .detail .kategori {
+  color: var(--light-black);
+  font-size: 0.9em;
+}
+
+.detailProdukKonten .boxDetail .detail .deskripsi {
+  margin: 0.5em 0;
+}
+.detailProdukKonten .boxDetail .detail .deskripsi h3 {
+  color: var(--dark-black);
+  font-size: 1.1em;
+}
+.detailProdukKonten .boxDetail .detail .deskripsi p {
+  color: var(--light-black);
+  font-size: 0.9em;
+}
+
+.detailProdukKonten .boxDetail .detail form .formInput {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0;
+}
+
+.detailProdukKonten .boxDetail .detail .formInput label {
+  font-size: 0.9em;
+  color: var(--light-black);
+}
+
+.detailProdukKonten .boxDetail .detail .formInput:nth-child(1) input {
+  width: 5em;
+  height: 3em;
+  border: 1.5px solid var(--purple);
+  padding-left: 0.5em;
+}
+
+.detailProdukKonten .boxDetail .detail .formInput:nth-child(1) input:focus {
+  outline: none;
+}
+
+.detailProdukKonten .boxDetail .detail .formInput:nth-child(2) input {
+  width: 60%;
+  height: 2.3em;
+  border: 1.5px solid var(--purple);
+  padding: 0 0.5em;
+}
+
+.detailProdukKonten .boxDetail .detail .formInput:nth-child(2) input:focus {
+  outline: none;
+}
+
+.detailProdukKonten .boxDetail .detail form .formButton {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.detailProdukKonten .boxDetail .detail form .formButton button {
+  width: 100%;
+  height: 2.7em;
+  cursor: pointer;
+  background-color: var(--dark-black);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
+  border-radius: 1em;
+}
+
+.detailProdukKonten .boxDetail .detail form .formButton button:hover {
+  color: var(--dark-black);
+  border: 2px solid var(--dark-black);
+  background-color: var(--white);
+}
+
+/* Keranjang */
+.keranjangKonten {
+  background-color: var(--white);
+  padding: 1em;
+}
+
+.keranjangKonten h1 {
+  text-align: center;
+  padding: 1em;
+  color: var(--dark-black);
+  background-color: var(--light-blue);
+}
+
+.keranjangKonten .box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 5em;
+}
+
+.keranjangKonten .box .firstBox {
+  width: 50%;
+  overflow: auto;
+}
+
+.keranjangKonten .box .firstBox table {
+  width: 100%;
+  border: 1px solid var(--light-blue);
+}
+
+.keranjangKonten .box .firstBox table th {
+  text-align: center;
+  background-color: var(--light-blue);
+  border: none;
+  color: var(--light-black);
+  padding: 0.5em;
+}
+
+.keranjangKonten .box .firstBox table td {
+  height: 2em;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 0.5em;
+  border: none;
+  border-bottom: 1px solid var(--dark-white);
+}
+
+.keranjangKonten .box .firstBox table td img {
+  width: 5em;
+}
+
+.keranjangKonten .box .firstBox table td input {
+  width: 5em;
+  height: 2.3em;
+  padding: 0 0.5em;
+  border: 1px solid var(--light-black);
+}
+
+.keranjangKonten .box .firstBox table td input:focus {
+  outline: 2px solid var(--purple);
+}
+
+.keranjangKonten .box .firstBox table td .icon {
+  color: var(--purple);
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.keranjangKonten .box .secondBox {
+  margin: 2em 0;
+  margin-left: 2em;
+}
+
+.keranjangKonten .box .secondBox .total {
+  background-color: var(--light-blue);
+  padding: 2em;
+  max-width: 20em;
+}
+
+.keranjangKonten .box .secondBox .total h2 {
+  color: var(--dark-black);
+  font-size: 1.6em;
+}
+
+.keranjangKonten .box .secondBox .total p:nth-child(2) {
+  color: var(--light-black);
+}
+
+.keranjangKonten .box .secondBox .total p:nth-child(3) {
+  color: var(--light-black);
+  font-weight: bold;
+  margin-top: 2em;
+}
+
+.keranjangKonten .box .secondBox .total .harga {
+  font-size: 1.3em;
+  color: var(--light-red);
+  font-weight: bold;
+}
+
+.keranjangKonten .box .secondBox form {
+  width: 100%;
+  max-width: 20em;
+  background-color: var(--light-blue);
+  padding: 1em;
+  margin-top: 2em;
+}
+
+.keranjangKonten .box .secondBox form .formInput p {
+  font-size: 0.8em;
+  color: var(--light-black);
+}
+
+.keranjangKonten .box .secondBox form .formInput .bank {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1em;
+}
+
+.keranjangKonten .box .secondBox form .formInput .bank p {
+  font-size: 0.9em;
+  color: #7d7d7d;
+}
+
+.keranjangKonten .box .secondBox form .formInput {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+.keranjangKonten .box .secondBox form .formInput label {
+  color: var(--light-black);
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+.keranjangKonten .box .secondBox form .formInput textarea {
+  resize: none;
+  height: 7em;
+  padding: 0.5em;
+  color: var(--dark-black);
+  font-size: 0.9em;
+  border-radius: 1em;
+  border: 1px solid var(--light-black);
+}
+
+.keranjangKonten .box .secondBox form .formInput textarea:focus {
+  border: none;
+  outline: 2px solid var(--purple);
+}
+
+.keranjangKonten .box .secondBox button {
+  width: 100%;
+  border: none;
+  height: 2.8em;
+  cursor: pointer;
+  background-color: var(--dark-black);
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 1em;
+}
+
+.keranjangKonten .box .secondBox button:hover {
+  border: 2px solid var(--dark-black);
+  background-color: var(--white);
+  color: var(--dark-black);
+}
+
+/* Detail Riwayat Pesanan */
+
+.pesananKonten {
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pesananKonten h2 {
+  color: var(--dark-black);
+  margin: 1em;
+  font-size: 2em;
+}
+
+.pesananKonten .box {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 70%;
+  margin: 0 2em 2em 2em;
+}
+
+.pesananKonten .box .firstBox {
+  width: 50%;
+  background-color: var(--light-blue);
+  padding: 1em;
+}
+
+.pesananKonten .box .firstBox .card {
+  margin: 1em 0;
+}
+
+.pesananKonten .box .firstBox .card .rekening {
+  font-size: 1.2em;
+  color: var(--light-black);
+  font-weight: bold;
+}
+
+.pesananKonten .box .firstBox .card h4 {
+  color: var(--dark-black);
+  font-size: 1.1em;
+}
+
+.pesananKonten .box .firstBox .card p {
+  color: var(--dark-black);
+  font-size: 0.9em;
+}
+
+.pesananKonten .box .secondBox {
+  width: 50%;
+  padding: 1em;
+}
+
+.pesananKonten .box .secondBox .detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 1em;
+  min-height: 7em;
+  background-color: var(--light-blue);
+  width: 100%;
+}
+
+.pesananKonten .box .secondBox .detail img {
+  width: 5em;
+  height: 5em;
+  display: flex;
+  margin: auto;
+}
+
+.pesananKonten .box .secondBox .detail .keterangan {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+
+.pesananKonten .box .secondBox .detail .keterangan p {
+  font-size: 0.9em;
+  color: var(--dark-black);
+  font-weight: bold;
+}
+
+.pesananKonten button {
+  width: 70%;
+  margin-bottom: 2em;
+  height: 3em;
+  background-color: var(--dark-black);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  font-size: 1em;
+}
+
+.pesananKonten button:hover {
+  background-color: var(--white);
+  color: var(--dark-black);
+  border: 2px solid var(--dark-black);
+}
+
+/* Login, Register */
+.loginPembeliKonten,
+.registerPembeliKonten {
+  min-height: 30em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  padding: 2em 0;
+}
+
+.loginPembeliKonten .box,
+.registerPembeliKonten .box {
+  width: 30em;
+  background-color: var(--white);
+  border-radius: 1em;
+  padding: 2em;
+  box-shadow: 0 0 1em #d9d9d9;
+}
+
+.loginPembeliKonten .box form,
+.registerPembeliKonten .box form {
+  width: 100%;
+  height: 100%;
+}
+
+.loginPembeliKonten .box form h2,
+.registerPembeliKonten .box form h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--dark-black);
+  text-transform: uppercase;
+}
+
+.loginPembeliKonten .box form .formInput,
+.registerPembeliKonten .box form .formInput {
+  display: flex;
+  flex-direction: column;
+  height: 5em;
+  justify-content: space-evenly;
+}
+
+.loginPembeliKonten .box form .formInput label,
+.registerPembeliKonten .box form .formInput label {
+  color: var(--dark-black);
+}
+
+.registerPembeliKonten .box form .formInput label .required {
+  color: var(--light-red);
+}
+
+.loginPembeliKonten .box form .formInput input,
+.registerPembeliKonten .box form .formInput input {
+  color: var(--dark-black);
+  height: 2.6em;
+  padding: 0 0.5em;
+  border: 1px solid var(--light-black);
+}
+
+.loginPembeliKonten .box form .formInput input:focus,
+.registerPembeliKonten .box form .formInput input:focus {
+  outline: 2px solid var(--purple);
+}
+
+.registerPembeliKonten .box form .formInput:nth-child(8) label span {
+  font-size: 0.8em;
+}
+
+.registerPembeliKonten .box form .formInput input[type='file'] {
+  border: none;
+  padding: 0;
+  font-size: 0.8em;
+}
+
+.loginPembeliKonten .box form .formButton,
+.registerPembeliKonten .box form .formButton {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.loginPembeliKonten .box form .formButton button,
+.registerPembeliKonten .box form .formButton button {
+  width: 100%;
+  background-color: var(--dark-black);
+  color: var(--white);
+  height: 2.5em;
+  border: none;
+  border-radius: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.loginPembeliKonten .box form .formButton button:hover,
+.registerPembeliKonten .box form .formButton button:hover {
+  background-color: var(--white);
+  border: 2px solid var(--dark-black);
+  color: var(--dark-black);
+}
+
+.loginPembeliKonten .box form .formButton p,
+.registerPembeliKonten .box form .formButton p {
+  font-size: 0.8em;
+  color: var(--light-black);
+  margin-top: 1em;
+}
+
+.loginPembeliKonten .box form .formButton .tombol,
+.registerPembeliKonten .box form .formButton .tombol {
+  text-decoration: none;
+  color: var(--light-red);
+}
+
+/* Profile */
+.profileKonten {
+  padding: 2em 0 3em 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.profileKonten h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: var(--dark-black);
+}
+
+.profileKonten .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50em;
+  background-color: var(--light-blue);
+  margin: 2em 0;
+}
+
+.profileKonten .box .gambar {
+  width: 50%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileKonten .box .gambar img {
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+}
+
+.profileKonten .box .detailProfile {
+  width: 50%;
+  padding: 1em;
+}
+
+.profileKonten .box .detailProfile .card {
+  margin: 0.7em 0;
+}
+
+.profileKonten .box .detailProfile .card h4 {
+  color: var(--dark-black);
+}
+
+.profileKonten .box .detailProfile .card p {
+  border: 1px solid var(--light-black);
+  padding: 0.5em;
+  border-radius: 0.6em;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  color: var(--light-black);
+}
+
+.profileKonten .box .detailProfile .card .button {
+  width: 60%;
+  background-color: var(--dark-black);
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2em;
+  height: 2.3em;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.6em;
+  align-items: center;
+}
+
+.profileKonten .pesananSaya {
+  width: 50em;
+  background-color: var(--white);
+  box-shadow: 0 0 5px #bebebe;
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+  margin-top: 2em;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.profileKonten .pesananSaya .icon {
+  font-size: 1.4em;
+  color: var(--light-black);
+}
+
+.profileKonten .pesananSaya:hover .icon {
+  color: var(--purple);
+}
+
+.profileKonten .pesananSaya p {
+  color: var(--light-black);
+  font-weight: bold;
+}
+
+.profileKonten .pesananSaya:hover p {
+  color: var(--purple);
+}
+
+/* Review */
+.reviewPembeliKonten {
+  background-color: var(--white);
+  padding: 2em 1em;
+}
+
+.reviewPembeliKonten h1 {
+  text-align: center;
+  color: var(--dark-black);
+}
+
+.reviewPembeliKonten .boxReview {
+  width: 25em;
+  margin: 1em auto;
+  padding: 1em;
+  border: 2px dashed var(--purple);
+  border-radius: 1em;
+}
+
+.reviewPembeliKonten .boxReview form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  min-height: 8em;
+  background-color: var(--light-purple);
+  border-radius: 1em;
+  padding: 1.5em;
+}
+
+.reviewPembeliKonten .boxReview form label {
+  color: var(--dark-purple);
+  font-size: bold;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.reviewPembeliKonten .boxReview form label .icon {
+  margin-right: 0.5em;
+}
+
+.reviewPembeliKonten .boxReview form textarea {
+  resize: none;
+  height: 8em;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border: 1px solid var(--light-black);
+  border-radius: 1em;
+  color: var(--light-black);
+}
+
+.reviewPembeliKonten .boxReview form textarea:focus {
+  outline: 2px solid var(--purple);
+}
+
+.reviewPembeliKonten .boxReview form button {
+  height: 2.4em;
+  background-color: var(--dark-black);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.reviewPembeliKonten .boxReview form button:hover {
+  background-color: var(--white);
+  border: 2px solid var(--dark-black);
+  color: var(--dark-black);
+}
+
+.reviewPembeliKonten h2 {
+  font-size: 1em;
+  color: var(--light-black);
+  padding: 0.5em 1em;
+  background-color: var(--white);
+  border-left: 2px solid var(--purple);
+  border-top: 2px solid var(--purple);
+  box-shadow: 0 0 10px #b1b1b1;
+  width: 20em;
+  margin-top: 3em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.reviewPembeliKonten h2 .icon {
+  margin-right: 0.5em;
+}
+
+.reviewPembeliKonten .cardList {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.reviewPembeliKonten .card {
+  width: 18em;
+  min-height: 12em;
+  background-color: var(--white);
+  box-shadow: 0 0 10px #b9b9b9;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.reviewPembeliKonten .card .msg {
+  color: var(--light-black);
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.reviewPembeliKonten .card .msg .icon {
+  font-size: 1.4em;
+  color: var(--purple);
+  margin: 0 0.5em;
+}
+
+.reviewPembeliKonten .card .profil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5em;
+}
+
+.reviewPembeliKonten .card .profil img {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.reviewPembeliKonten .card .profil p {
+  font-size: 0.9em;
+  color: var(--light-black);
+  font-weight: bold;
+}
+
+/* Riwayat Pesanan */
+
+.riwayatPesananKonten {
+  padding: 2em 1em;
+  background-color: var(--white);
+}
+
+.riwayatPesananKonten h1 {
+  text-align: center;
+  color: var(--dark-black);
+}
+
+.riwayatPesananKonten .berlangsung,
+.riwayatPesananKonten .selesai {
+  margin: 2em auto;
+  width: 60%;
+  background-color: var(--light-blue);
+  padding: 1em;
+}
+
+.riwayatPesananKonten .berlangsung h2,
+.riwayatPesananKonten .selesai h2 {
+  color: var(--light-black);
+  font-size: 1.2em;
+}
+
+.riwayatPesananKonten .berlangsung .box,
+.riwayatPesananKonten .selesai .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin: 1em 0;
+}
+
+.riwayatPesananKonten .berlangsung .box .card,
+.riwayatPesananKonten .selesai .box .card {
+  background-color: var(--white);
+  width: 20em;
+  min-height: 5em;
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em;
+  box-shadow: 0 0 5px #c1c1c1;
+  text-decoration: none;
+}
+
+.riwayatPesananKonten .berlangsung .box .card:hover h3,
+.riwayatPesananKonten .selesai .box .card:hover h3,
+.riwayatPesananKonten .berlangsung .box .card:hover .tanggal p,
+.riwayatPesananKonten .selesai .box .card:hover .tanggal p,
+.riwayatPesananKonten .berlangsung .box .card:hover .detail p:nth-child(1),
+.riwayatPesananKonten .selesai .box .card:hover .detail p:nth-child(1),
+.riwayatPesananKonten .berlangsung .box .card:hover .detail p:nth-child(2),
+.riwayatPesananKonten .selesai .box .card:hover .detail p:nth-child(2) {
+  color: var(--purple);
+}
+
+.riwayatPesananKonten .berlangsung .box .card h3,
+.riwayatPesananKonten .selesai .box .card h3 {
+  color: var(--light-black);
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.riwayatPesananKonten .berlangsung .box .card h3 .icon,
+.riwayatPesananKonten .selesai .box .card h3 .icon {
+  margin-right: 0.5em;
+}
+
+.riwayatPesananKonten .berlangsung .box .card .tanggal p,
+.riwayatPesananKonten .selesai .box .card .tanggal p {
+  font-size: 1em;
+  color: var(--dark-black);
+}
+.riwayatPesananKonten .berlangsung .box .card .detail,
+.riwayatPesananKonten .selesai .box .card .detail {
+  text-align: right;
+}
+
+.riwayatPesananKonten .berlangsung .box .card .detail p:nth-child(1),
+.riwayatPesananKonten .selesai .box .card .detail p:nth-child(1) {
+  color: var(--dark-black);
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.riwayatPesananKonten .berlangsung .box .card .detail p:nth-child(2),
+.riwayatPesananKonten .selesai .box .card .detail p:nth-child(2) {
+  color: var(--light-black);
+  font-weight: bold;
+}
+
+/* Footer */
+.footer .top {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 12em;
+  background-color: var(--dark-black);
+}
+
+.footer .top .maps {
+  width: 90%;
+  max-width: 20em;
+  border: none;
+  height: 15em;
+  margin: 1em;
+}
+
+.footer .top .kontak h2,
+.footer .top .medsos h2 {
+  font-size: 1.2em;
+  color: var(--white);
+  margin-bottom: 0.4em;
+  text-align: center;
+}
+
+.footer .top .kontak p {
+  color: var(--dark-white);
+}
+
+.footer .top .medsosIcon {
+  display: flex;
+  width: 10em;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.footer .top .medsos .icon {
+  color: var(--dark-white);
+  cursor: pointer;
+  font-size: 1.3em;
+}
+
+.footer .top .medsos .icon:hover {
+  color: var(--yellow);
+}
+
+.footer .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  background-color: var(--dark-black);
+  border-top: 1px solid var(--dark-white);
+}
+
+.footer .bottom p {
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar .firstSide .search {
+    width: 13em;
+  }
+
+  .loginPembeliKonten {
+    height: 47em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.9em;
+  }
+
+  .navbar .firstSide {
+    position: fixed;
+    width: 100%;
+  }
+
+  .navbar .firstSide .search {
+    display: none;
+  }
+
+  .navbar .firstSide .search.aktif {
+    display: block;
+    position: absolute;
+    height: 3em;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border: 2px solid var(--light-black);
+  }
+
+  .navbar .firstSide .searchMobile {
+    display: block;
+  }
+
+  .navbar .firstSide .menu {
+    display: none;
+  }
+
+  .navbar .firstSide .iconBar {
+    color: var(--white);
+    font-size: 1.8em;
+    display: block;
+  }
+
+  .navbar .firstSide .logo h4 {
+    position: static;
+    top: 50%;
+    transform: translateX(-50%);
+    margin-left: 20%;
+  }
+
+  .navbar .secondSide nav {
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    max-width: 35em;
+    height: fit-content;
+    right: 0;
+    top: -30em;
+    position: fixed;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .navbar .secondSide nav.aktif {
+    top: 4em;
+    z-index: 10;
+  }
+
+  .navbar .secondSide nav li {
+    padding: 2em;
+  }
+
+  .navbar .menuBar {
+    display: block;
+  }
+
+  .navbar .thirdSide {
+    display: block;
+  }
+
+  .heroHome {
+    padding-top: 18em;
+    flex-direction: column;
+    height: 80em;
+  }
+
+  .heroHome .firstSide,
+  .heroHome .secondSide {
+    width: 100%;
+  }
+
+  .heroHome .firstSide .konten {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heroHome .firstSide h1 {
+    font-size: 3.3em;
+  }
+
+  .heroHome .secondSide img {
+    width: 100%;
+  }
+  .heroHome .secondSide {
+    background: -webkit-linear-gradient(270deg, var(--light-purple), var(--white));
+  }
+
+  /* Produk */
+  .produkPembeliKonten {
+    padding-top: 6em;
+  }
+
+  .produkPembeliKonten .judulProduk .overlay h1 {
+    font-size: 2.3em;
+  }
+
+  /* Detail Produk */
+
+  .detailProduk {
+    padding-top: 2em;
+  }
+
+  .detailProdukKonten .boxDetail {
+    flex-direction: column;
+  }
+
+  .detailProdukKonten .boxDetail .gambar {
+    width: 80%;
+    margin-top: 2em;
+  }
+
+  .detailProdukKonten .boxDetail .detail {
+    width: 100%;
+  }
+
+  /* Keranjang */
+
+  .keranjang h1 {
+    margin: 2em 0;
+  }
+
+  .keranjangKonten .box {
+    flex-direction: column;
+  }
+
+  .keranjangKonten .box .firstBox {
+    width: 100%;
+  }
+
+  .keranjangKonten .box .secondBox {
+    margin-left: 0;
+  }
+
+  /* Detail Riwayat Pesanan */
+
+  .pesananKonten {
+    padding-top: 3em;
+  }
+
+  .pesananKonten .box {
+    width: 90%;
+  }
+
+  .pesananKonten .box {
+    flex-direction: column;
+  }
+
+  .pesananKonten .box .firstBox {
+    width: 100%;
+  }
+
+  .pesananKonten .box .secondBox {
+    padding: 0;
+    padding-top: 1em;
+    width: 100%;
+  }
+
+  .pesananKonten button {
+    width: 90%;
+  }
+
+  /* Login */
+  .loginPembeliKonten {
+    height: 48em;
+  }
+
+  .registerPembeliKonten {
+    padding-top: 6em;
+  }
+
+  /* Profile Akun */
+
+  .profileKonten {
+    padding-top: 5em;
+  }
+
+  .profileKonten .box {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .profileKonten .box .gambar {
+    width: 100%;
+  }
+
+  .profileKonten .box .gambar img {
+    width: 10em;
+    height: 10em;
+  }
+
+  .profileKonten .box .detailProfile {
+    width: 100%;
+  }
+
+  .profileKonten .box .card .button {
+    margin: 0 auto;
+  }
+
+  .profileKonten .pesananSaya {
+    width: 90%;
+  }
+
+  /* Review */
+  .reviewPembeliKonten {
+    padding-top: 5em;
+  }
+
+  /* Riwayat Pesanan */
+  .riwayatPesananKonten {
+    padding-top: 6em;
+    min-height: 50em;
+  }
+
+  .riwayatPesananKonten .berlangsung,
+  .riwayatPesananKonten .selesai {
+    width: 100%;
+  }
+
+  .riwayatPesananKonten .berlangsung .box,
+  .riwayatPesananKonten .selesai .box {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer {
+    padding-bottom: 3em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  .navbar .firstSide {
+    padding: 0 1em;
+  }
+
+  .productHome .card {
+    width: 95%;
+    max-width: 24em;
+    height: 30em;
+  }
+
+  .productHome .card .cardGambar {
+    width: 100%;
+    max-width: 24em;
+    height: 24em;
+  }
+
+  .newProductHome .newProductHomeKonten .card {
+    max-width: 22em;
+    width: 96%;
+  }
+
+  .newProductHome .newProductHomeKonten .card .cardGambar {
+    width: 100%;
+    max-width: 20em;
+    height: 17em;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 1em;
+    position: relative;
+  }
+
+  .message .pesanKonten .box {
+    flex-direction: column;
+  }
+
+  .message .pesanKonten .box .gambar,
+  .message .pesanKonten .box form {
+    width: 100%;
+  }
+
+  .message .pesanKonten .box form {
+    margin-top: 1em;
+  }
+
+  /* Produk */
+
+  .produkPembeliKonten .daftarProduk .box {
+    width: 100%;
+    height: 25em;
+  }
+
+  .produkPembeliKonten .daftarProduk .box .gambar {
+    height: 70%;
+  }
+
+  .produkPembeliKonten .daftarProduk .box img {
+    width: 80%;
+  }
+
+  /* Login */
+
+  .loginPembeliKonten {
+    height: 40em;
+  }
+
+  .loginPembeliKonten .box,
+  .registerPembeliKonten .box {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  /* Review */
+
+  .reviewPembeliKonten .boxReview {
+    width: 100%;
+  }
+
+  .reviewPembeliKonten h2 {
+    width: 100%;
+  }
+
+  .reviewPembeliKonten .card {
+    width: 100%;
+    min-height: 5em;
+  }
+
+  .reviewPembeliKonten .card .profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .reviewPembeliKonten .card .profil img {
+    width: 10%;
+    margin-right: 0.5em;
+  }
+
+  /* Riwayat Pesanan */
+
+  .riwayatPesananKonten .berlangsung .box .card,
+  .riwayatPesananKonten .selesai .box .card {
+    width: 100%;
+  }
+
+  /* Footer */
+
+  .footer .top {
+    flex-direction: column;
+  }
+
+  .footer .top .maps {
+    margin-bottom: 1em;
+  }
+
+  .footer .top .medsos {
+    margin: 1em 0;
+  }
+}
